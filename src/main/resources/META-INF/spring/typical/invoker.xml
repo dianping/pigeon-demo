@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="echoService" class="com.dianping.dpsf.spring.ProxyBeanFactory"
+		init-method="init">
+		<property name="serviceName"
+			value="http://service.dianping.com/com.dianping.pigeon.demo.EchoService" />
+		<property name="iface" value="com.dianping.pigeon.demo.EchoService" />
+		<property name="serialize" value="hessian" />
+		<property name="callMethod" value="sync" />
+		<property name="timeout" value="1000" />
+	</bean>
+
+	<bean id="echoServiceWithCallback" class="com.dianping.dpsf.spring.ProxyBeanFactory"
+		init-method="init">
+		<property name="serviceName"
+			value="http://service.dianping.com/com.dianping.pigeon.demo.EchoService" />
+		<property name="iface" value="com.dianping.pigeon.demo.EchoService" />
+		<property name="serialize" value="hessian" />
+		<property name="callMethod" value="sync" />
+		<property name="timeout" value="1000" />
+		<property name="callback" ref="echoServiceCallback" />
+	</bean>
+
+	<bean id="echoServiceCallback" class="com.dianping.pigeon.demo.EchoServiceCallback" />
+
+</beans>
