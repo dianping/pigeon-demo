@@ -4,11 +4,13 @@
  */
 package com.dianping.pigeon.demo;
 
+import java.io.Serializable;
+
 public interface UserService {
 
 	User getUserDetail(User user, boolean withPassword);
 
-	class User {
+	public static class User implements Serializable {
 		private String username;
 		private String email;
 		private String password;
@@ -41,4 +43,5 @@ public interface UserService {
 			return username + "," + email + "," + password;
 		}
 	}
+
 }

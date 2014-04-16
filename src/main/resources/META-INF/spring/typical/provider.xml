@@ -10,6 +10,9 @@
 
 	<bean class="com.dianping.dpsf.spring.ServiceRegistry"
 		init-method="init">
+		<property name="port">
+			<value>4040</value>
+		</property>
 		<property name="services">
 			<map>
 				<entry

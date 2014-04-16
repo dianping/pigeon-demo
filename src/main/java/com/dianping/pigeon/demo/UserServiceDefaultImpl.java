@@ -14,7 +14,9 @@ public class UserServiceDefaultImpl implements UserService {
 		if (withPassword) {
 			user.setPassword("123456");
 		}
-
+		if(user.getUsername() != null && user.getUsername().equals("scott")) {
+			throw new RuntimeException("invalid user!");
+		}
 		return user;
 	}
 

@@ -12,7 +12,7 @@ public class MyInvokerProcessInterceptor implements InvokerProcessInterceptor {
 	}
 
 	@Override
-	public void postInvoke(InvocationRequest invocationRequest, InvocationResponse invocationResponse) {
+	public void postInvoke(InvocationRequest invocationRequest,InvocationResponse invocationResponse) {
 		System.out.println("postInvoke:" + invocationResponse);
 	}
 
