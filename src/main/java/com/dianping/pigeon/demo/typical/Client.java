@@ -27,16 +27,14 @@ public class Client {
 
 		UserService userService = (UserService) CLIENT_CONTAINER.getBean("userService");
 
-		for (;;) {
-			try {
-				User user = new User();
-				user.setUsername("wuxiang");
-				System.out.println(userService.getUserDetail(user, true));
+		try {
+			User user = new User();
+			user.setUsername("wuxiang");
+			System.out.println(userService.getUserDetail(user, true));
 
-				System.out.println(echoService.echo("echoService_input"));
-				echoServiceWithCallback.echo("echoServiceWithCallback_input");
-			} catch (Throwable t) {
-			}
+			System.out.println(echoService.echo("echoService_input"));
+			echoServiceWithCallback.echo("echoServiceWithCallback_input");
+		} catch (Throwable t) {
 		}
 	}
 

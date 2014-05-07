@@ -5,19 +5,22 @@
 	<name>pigeon-demo</name>
 	<groupId>com.dianping</groupId>
 	<artifactId>pigeon-demo</artifactId>
-	<version>2.1.10</version>
+	<version>1.0.0</version>
 	<url>http://www.dianping.com</url>
 	<packaging>jar</packaging>
+	<properties>
+		<env>dev</env>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>2.5.6</version>
+			<version>3.2.7.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>com.dianping.dpsf</groupId>
 			<artifactId>dpsf-net</artifactId>
-			<version>2.1.10</version>
+			<version>2.1.17</version>
 		</dependency>
 		<dependency>
 			<groupId>com.dianping.cat</groupId>
@@ -31,7 +34,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.dianping.lion</groupId>
-			<artifactId>lion-dev</artifactId>
+			<artifactId>lion-${env}</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
