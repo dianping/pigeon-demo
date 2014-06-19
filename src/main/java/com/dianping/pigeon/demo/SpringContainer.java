@@ -43,7 +43,7 @@ public final class SpringContainer {
 					try {
 						context = new ClassPathXmlApplicationContext(configPath.split("[,\\s]+"));
 						context.start();
-					} catch (Exception e) {
+					} catch (Throwable e) {
 						throw new RuntimeException("error while start spring context:" + configPath, e);
 					}
 				}

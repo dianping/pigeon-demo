@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public interface UserService {
 
-	User getUserDetail(User user, boolean withPassword);
+	User[] getUserDetail(User[] users, boolean withPassword);
 
 	public static class User implements Serializable {
 		private String username;

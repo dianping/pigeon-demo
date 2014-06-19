@@ -19,7 +19,6 @@ public class Client {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		// ConfigCache.getInstance("dev.lion.dp");
 		CLIENT_CONTAINER.start();
 
 		EchoService echoService = (EchoService) CLIENT_CONTAINER.getBean("echoService");
@@ -30,9 +29,9 @@ public class Client {
 		try {
 			User user = new User();
 			user.setUsername("wuxiang");
-			System.out.println(userService.getUserDetail(user, true));
-
-			System.out.println(echoService.echo("echoService_input"));
+			User[] users = new User[] { user };
+			System.out.println(echoService.echo("hi"));
+			System.out.println(userService.getUserDetail(users, true));
 			echoServiceWithCallback.echo("echoServiceWithCallback_input");
 		} catch (Throwable t) {
 		}

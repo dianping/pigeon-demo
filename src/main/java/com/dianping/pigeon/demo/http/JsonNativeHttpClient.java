@@ -13,8 +13,6 @@ import org.apache.commons.httpclient.methods.ByteArrayRequestEntity;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.params.HttpConnectionManagerParams;
 
-import com.dianping.dpsf.exception.ServiceException;
-
 public class JsonNativeHttpClient {
 
 	static String postUrl = "http://localhost:4080/service?serialize=7";
@@ -60,7 +58,7 @@ public class JsonNativeHttpClient {
 			}
 			httpClient.executeMethod(method);
 			if (method.getStatusCode() >= 300) {
-				throw new ServiceException("" + method.getStatusCode());
+				throw new IllegalStateException("" + method.getStatusCode());
 			}
 			response = method.getResponseBodyAsString();
 			return response;

@@ -9,8 +9,8 @@ public class EchoServiceDefaultImpl implements EchoService {
 
 	@Override
 	public String echo(String input) {
-		System.out.println("received: " + input);
-
+		// throw new InvocationFailureException("error raised:" + input);
 		return "echo:" + input;
 	}
+
 }

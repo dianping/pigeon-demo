@@ -29,8 +29,9 @@ public class Client {
 		System.out.println("echo service result:" + echoService.echo("echoService_input"));
 
 		User user = new User();
-		user.setUsername("scott");
-		System.out.println("user service result:" + userService.getUserDetail(user, false));
+		user.setUsername("scott1");
+		User[] users = new User[] { user };
+		System.out.println("user service result:" + userService.getUserDetail(users, false));
 	}
 
 }
