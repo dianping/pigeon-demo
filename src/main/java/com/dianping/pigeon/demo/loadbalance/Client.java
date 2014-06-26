@@ -4,8 +4,8 @@
  */
 package com.dianping.pigeon.demo.loadbalance;
 
+import com.dianping.pigeon.container.SpringContainer;
 import com.dianping.pigeon.demo.EchoService;
-import com.dianping.pigeon.demo.SpringContainer;
 
 public class Client {
 
@@ -20,10 +20,7 @@ public class Client {
 		CLIENT_CONTAINER.start();
 
 		EchoService echoService = (EchoService) CLIENT_CONTAINER.getBean("echoService");
-		try {
-			System.out.println(echoService.echo("hi"));
-		} catch (Throwable t) {
-		}
+		System.out.println(echoService.echo("hi"));
 	}
 
 }

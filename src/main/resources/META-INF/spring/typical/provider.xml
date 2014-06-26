@@ -33,7 +33,7 @@
 			</map>
 		</property>
 		<property name="corePoolSize">
-			<value>200</value>
+			<value>180</value>
 		</property>
 		<property name="maxPoolSize">
 			<value>500</value>

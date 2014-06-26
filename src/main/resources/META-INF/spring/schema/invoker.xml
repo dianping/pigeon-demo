@@ -10,7 +10,9 @@
 
 	<pigeon:reference id="echoService" timeout="1000"
 		url="http://service.dianping.com/com.dianping.pigeon.demo.EchoService"
-		interface="com.dianping.pigeon.demo.EchoService" />
+		interface="com.dianping.pigeon.demo.EchoService">
+		<pigeon:method name="echo" timeout="2000" />
+	</pigeon:reference>
 
 	<bean id="echoServiceCallback" class="com.dianping.pigeon.demo.EchoServiceCallback" />
 

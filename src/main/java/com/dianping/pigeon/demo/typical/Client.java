@@ -4,8 +4,8 @@
  */
 package com.dianping.pigeon.demo.typical;
 
+import com.dianping.pigeon.container.SpringContainer;
 import com.dianping.pigeon.demo.EchoService;
-import com.dianping.pigeon.demo.SpringContainer;
 import com.dianping.pigeon.demo.UserService;
 import com.dianping.pigeon.demo.UserService.User;
 
@@ -26,15 +26,12 @@ public class Client {
 
 		UserService userService = (UserService) CLIENT_CONTAINER.getBean("userService");
 
-		try {
-			User user = new User();
-			user.setUsername("wuxiang");
-			User[] users = new User[] { user };
-			System.out.println(echoService.echo("hi"));
-			System.out.println(userService.getUserDetail(users, true));
-			echoServiceWithCallback.echo("echoServiceWithCallback_input");
-		} catch (Throwable t) {
-		}
+		User user = new User();
+		user.setUsername("jason");
+		User[] users = new User[] { user };
+		System.out.println(echoService.echo("hi"));
+		System.out.println(userService.getUserDetail(users, true));
+		echoServiceWithCallback.echo("echoServiceWithCallback_input");
 	}
 
 }

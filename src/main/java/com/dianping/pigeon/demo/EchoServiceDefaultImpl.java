@@ -12,5 +12,11 @@ public class EchoServiceDefaultImpl implements EchoService {
 		// throw new InvocationFailureException("error raised:" + input);
 		return "echo:" + input;
 	}
+	
+	@Override
+	public String echo2(String input) {
+		// throw new InvocationFailureException("error raised:" + input);
+		return "echo2:" + input;
+	}
 
 }

@@ -16,4 +16,9 @@ public class EchoServiceAnnotationImpl implements EchoService {
 		return "annotation service echo:" + input;
 	}
 
+	@Override
+	public String echo2(String input) {
+		System.out.println("received: " + input);
+		return "annotation service echo2:" + input;
+	}
 }

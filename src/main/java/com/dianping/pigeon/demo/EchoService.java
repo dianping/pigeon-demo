@@ -10,4 +10,5 @@ public interface EchoService {
 
 	String echo(String input);
 	
+	String echo2(String input);
 }

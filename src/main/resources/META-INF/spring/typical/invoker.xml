@@ -15,8 +15,6 @@
 		<property name="serialize" value="hessian" />
 		<property name="callMethod" value="sync" />
 		<property name="timeout" value="1000" />
-		<property name="cluster" value="failfast" />
-		<property name="timeoutRetry" value="false" />
 	</bean>
 
 	<bean id="echoServiceWithCallback" class="com.dianping.dpsf.spring.ProxyBeanFactory"
@@ -34,8 +32,7 @@
 
 	<bean id="userService" class="com.dianping.dpsf.spring.ProxyBeanFactory"
 		init-method="init">
-		<property name="serviceName"
-			value="com.dianping.pigeon.demo.UserService" />
+		<property name="serviceName" value="com.dianping.pigeon.demo.UserService" />
 		<property name="iface" value="com.dianping.pigeon.demo.UserService" />
 		<property name="serialize" value="hessian" />
 		<property name="callMethod" value="sync" />

@@ -4,7 +4,7 @@
  */
 package com.dianping.pigeon.demo.loadbalance;
 
-import com.dianping.pigeon.demo.SpringContainer;
+import com.dianping.pigeon.container.SpringContainer;
 
 public class Server {
 
