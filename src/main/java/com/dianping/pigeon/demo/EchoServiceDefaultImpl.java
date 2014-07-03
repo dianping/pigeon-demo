@@ -4,7 +4,6 @@
  */
 package com.dianping.pigeon.demo;
 
-
 public class EchoServiceDefaultImpl implements EchoService {
 
 	@Override
@@ -12,11 +11,11 @@ public class EchoServiceDefaultImpl implements EchoService {
 		// throw new InvocationFailureException("error raised:" + input);
 		return "echo:" + input;
 	}
-	
+
 	@Override
-	public String echo2(String input) {
+	public String echo2(String input, int size) {
 		// throw new InvocationFailureException("error raised:" + input);
-		return "echo2:" + input;
+		return "echo2:" + input + ",size:" + size;
 	}
 
 }
