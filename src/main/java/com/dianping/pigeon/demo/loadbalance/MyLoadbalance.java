@@ -5,12 +5,12 @@ import java.util.List;
 import com.dianping.pigeon.remoting.common.domain.InvocationRequest;
 import com.dianping.pigeon.remoting.invoker.Client;
 import com.dianping.pigeon.remoting.invoker.config.InvokerConfig;
-import com.dianping.pigeon.remoting.invoker.route.balance.RoundRobinLoadBalance;
+import com.dianping.pigeon.remoting.invoker.route.balance.WeightedAutoawareLoadBalance;
 
-public class MyLoadbalance extends RoundRobinLoadBalance {
+public class MyLoadbalance extends WeightedAutoawareLoadBalance {
 
 	@Override
-	protected Client doSelect(List<Client> clients, InvokerConfig<?> invokerConfig, InvocationRequest request,
+	public Client doSelect(List<Client> clients, InvokerConfig<?> invokerConfig, InvocationRequest request,
 			int[] weights) {
 		if ("http://service.dianping.com/com.dianping.pigeon.demo.EchoService".equals(request.getServiceName())
 				&& "echo".equals(request.getMethodName())) {
