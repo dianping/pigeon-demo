@@ -8,6 +8,10 @@
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
 	default-autowire="byName">
 
+	<bean id="placeholder" class="com.dianping.lion.client.SpringConfig">
+		<property name="propertiesPath" value="config/applicationContext.properties" />
+	</bean>
+
 	<bean class="com.dianping.dpsf.spring.ServiceRegistry"
 		init-method="init">
 		<property name="port">

@@ -4,11 +4,16 @@
  */
 package com.dianping.pigeon.demo;
 
-public class EchoServiceDefaultImpl implements EchoService {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 
+public class EchoServiceDefaultImpl implements EchoService, InitializingBean {
+
+	private static final Logger logger = LoggerFactory.getLogger(EchoServiceDefaultImpl.class);
+	
 	@Override
 	public String echo(String input) {
-		// throw new InvocationFailureException("error raised:" + input);
 		return "echo:" + input;
 	}
 
@@ -18,4 +23,8 @@ public class EchoServiceDefaultImpl implements EchoService {
 		return "echo2:" + input + ",size:" + size;
 	}
 
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// throw new RuntimeException("error with echo service");
+	}
 }

@@ -23,7 +23,6 @@ public class Client {
 
 		EchoService echoService = (EchoService) CLIENT_CONTAINER.getBean("echoService");
 		EchoService echoServiceWithCallback = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithCallback");
-
 		UserService userService = (UserService) CLIENT_CONTAINER.getBean("userService");
 
 		User user = new User();
