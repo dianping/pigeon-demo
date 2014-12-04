@@ -36,12 +36,7 @@
 				<entry key="com.dianping.pigeon.demo.UserService" value-ref="defaultUserServiceImpl" />
 			</map>
 		</property>
-		<property name="corePoolSize">
-			<value>180</value>
-		</property>
-		<property name="maxPoolSize">
-			<value>500</value>
-		</property>
+		
 	</bean>
 
 	<bean id="defaultUserServiceImpl" class="com.dianping.pigeon.demo.UserServiceDefaultImpl" />

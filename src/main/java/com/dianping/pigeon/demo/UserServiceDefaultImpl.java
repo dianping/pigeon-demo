@@ -4,6 +4,7 @@
  */
 package com.dianping.pigeon.demo;
 
+import java.util.List;
 
 public class UserServiceDefaultImpl implements UserService {
 
@@ -21,6 +22,11 @@ public class UserServiceDefaultImpl implements UserService {
 			}
 		}
 		return users;
+	}
+
+	public User[] getUserDetail(List<User> users, boolean withPassword) {
+		// System.out.println("received: " + users);
+		return users.toArray(new User[0]);
 	}
 
 }
