@@ -4,20 +4,29 @@
  */
 package com.dianping.pigeon.demo;
 
+import java.util.List;
+
 public class UserServiceDefaultImpl implements UserService {
 
 	@Override
-	public User getUserDetail(User user, boolean withPassword) {
-		System.out.println("received: " + user);
+	public User[] getUserDetail(User[] users, boolean withPassword) {
+		// System.out.println("received: " + users);
 
-		user.setEmail(user.getUsername() + "@dianping.com");
-		if (withPassword) {
-			user.setPassword("123456");
+		for (User user : users) {
+			user.setEmail(user.getUsername() + "@dianping.com");
+			if (withPassword) {
+				user.setPassword("123456");
+			}
+			if (user.getUsername() != null && user.getUsername().equals("scott")) {
+				throw new RuntimeException("invalid user!");
+			}
 		}
-		if(user.getUsername() != null && user.getUsername().equals("scott")) {
-			throw new RuntimeException("invalid user!");
-		}
-		return user;
+		return users;
+	}
+
+	public User[] getUserDetail(List<User> users, boolean withPassword) {
+		// System.out.println("received: " + users);
+		return users.toArray(new User[0]);
 	}
 
 }

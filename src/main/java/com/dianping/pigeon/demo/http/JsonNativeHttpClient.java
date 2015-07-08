@@ -13,17 +13,15 @@ import org.apache.commons.httpclient.methods.ByteArrayRequestEntity;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.params.HttpConnectionManagerParams;
 
-import com.dianping.dpsf.exception.ServiceException;
-
 public class JsonNativeHttpClient {
 
-	static String postUrl = "http://localhost:4080/service?serialize=7";
+	static String postUrl = "http://10.1.108.47:4080/service?serialize=7";
 
 	public static void main(String[] args) throws Exception {
 		String request1 = "{\"seq\":-201,\"serialize\":7,\"callType\":1,\"timeout\":5000,\"methodName\":\"echo\",\"parameters\":[\"echoService_101\"],\"messageType\":2,\"context\":null,\"url\":\"http://service.dianping.com/com.dianping.pigeon.demo.EchoService\"}";
 		System.out.println(invoker(request1));
 
-		String request2 = "{\"seq\":-146,\"serialize\":7,\"callType\":1,\"timeout\":2000,\"methodName\":\"getUserDetail\",\"parameters\":[{\"@class\":\"com.dianping.pigeon.demo.UserService$User\",\"username\":\"user_73\",\"email\":null,\"password\":null},false],\"messageType\":2,\"url\":\"com.dianping.pigeon.demo.UserService\"}";
+		String request2 = "{\"seq\":-146,\"serialize\":7,\"callType\":1,\"timeout\":2000,\"methodName\":\"getUserDetail\",\"parameters\":[[\"java.util.List\",[{\"@class\":\"com.dianping.pigeon.demo.UserService$User\",\"username\":\"user_73\"},{\"@class\":\"com.dianping.pigeon.demo.UserService$User\",\"username\":\"user_74\"}]],false],\"messageType\":2,\"url\":\"com.dianping.pigeon.demo.UserService\"}";
 		System.out.println(invoker(request2));
 	}
 
@@ -60,7 +58,7 @@ public class JsonNativeHttpClient {
 			}
 			httpClient.executeMethod(method);
 			if (method.getStatusCode() >= 300) {
-				throw new ServiceException("" + method.getStatusCode());
+				throw new IllegalStateException("" + method.getStatusCode());
 			}
 			response = method.getResponseBodyAsString();
 			return response;

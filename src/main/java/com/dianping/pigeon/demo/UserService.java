@@ -5,15 +5,25 @@
 package com.dianping.pigeon.demo;
 
 import java.io.Serializable;
+import java.util.List;
 
 public interface UserService {
 
-	User getUserDetail(User user, boolean withPassword);
+	User[] getUserDetail(User[] users, boolean withPassword);
+	
+	User[] getUserDetail(List<User> users, boolean withPassword);
 
 	public static class User implements Serializable {
 		private String username;
 		private String email;
 		private String password;
+
+		public User() {
+		}
+
+		public User(String name) {
+			username = name;
+		}
 
 		public String getUsername() {
 			return username;

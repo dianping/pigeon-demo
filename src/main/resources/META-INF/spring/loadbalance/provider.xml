@@ -8,12 +8,11 @@
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
 	default-autowire="byName">
 
-	<bean id="placeholder" class="com.dianping.lion.client.SpringConfig">
-		<property name="propertiesPath" value="config/applicationContext.properties" />
-	</bean>
-
 	<bean class="com.dianping.dpsf.spring.ServiceRegistry"
 		init-method="init">
+		<property name="port">
+			<value>4040</value>
+		</property>
 		<property name="services">
 			<map>
 				<entry
@@ -22,21 +21,6 @@
 			</map>
 		</property>
 	</bean>
-
-	<bean class="com.dianping.dpsf.spring.ServiceRegistry"
-		init-method="init">
-		<property name="port">
-			<value>4050</value>
-		</property>
-		<property name="services">
-			<map>
-				<entry key="com.dianping.pigeon.demo.UserService" value-ref="defaultUserServiceImpl" />
-			</map>
-		</property>
-		
-	</bean>
-
-	<bean id="defaultUserServiceImpl" class="com.dianping.pigeon.demo.UserServiceDefaultImpl" />
 
 	<bean id="defaultEchoServiceImpl" class="com.dianping.pigeon.demo.EchoServiceDefaultImpl" />
 </beans>
