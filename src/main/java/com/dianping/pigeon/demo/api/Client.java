@@ -4,9 +4,7 @@
  */
 package com.dianping.pigeon.demo.api;
 
-import com.dianping.dpsf.async.ServiceCallback;
 import com.dianping.pigeon.demo.EchoService;
-import com.dianping.pigeon.demo.EchoServiceCallback;
 import com.dianping.pigeon.demo.interceptor.MyInvokerProcessInterceptor;
 import com.dianping.pigeon.remoting.ServiceFactory;
 import com.dianping.pigeon.remoting.invoker.process.InvokerProcessInterceptorFactory;
@@ -19,10 +17,10 @@ public class Client {
 		String url = "http://service.dianping.com/com.dianping.pigeon.demo.EchoService";
 		EchoService echoService = ServiceFactory.getService(url, EchoService.class);
 
-		ServiceCallback callback = new EchoServiceCallback();
-		EchoService serviceWithCallback = ServiceFactory.getService(url, EchoService.class, callback);
-		System.out.println("echoService result:" + echoService.echo("echoService_input"));
-		serviceWithCallback.echo("echoServiceWithCallback_input");
+		//InvocationCallback callback = new EchoServiceCallback();
+//		EchoService serviceWithCallback = ServiceFactory.getService(url, EchoService.class, callback);
+//		System.out.println("echoService result:" + echoService.echo("echoService_input"));
+//		serviceWithCallback.echo("echoServiceWithCallback_input");
 	}
 
 }

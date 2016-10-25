@@ -15,15 +15,16 @@ public class Client {
 	/**
 	 * @param args
 	 * @throws Exception
-	 */
+	 */ 
 	public static void main(String[] args) throws Exception {
 		CLIENT_CONTAINER.start();
 
 		EchoService echoService = (EchoService) CLIENT_CONTAINER.getBean("echoService");
 		EchoService echoServiceWithCallback = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithCallback");
-
+		
 		System.out.println(echoService.echo("scott"));
 		echoServiceWithCallback.echo("echoServiceWithCallback_input");
+		
 	}
 
 }

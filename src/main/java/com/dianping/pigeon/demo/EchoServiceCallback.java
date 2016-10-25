@@ -1,24 +1,17 @@
 package com.dianping.pigeon.demo;
 
-import com.dianping.dpsf.async.ServiceCallback;
-import com.dianping.dpsf.exception.DPSFException;
+import com.dianping.pigeon.remoting.invoker.concurrent.InvocationCallback;
 
-public class EchoServiceCallback implements ServiceCallback {
-
+public class EchoServiceCallback implements InvocationCallback {
 
 	@Override
-	public void callback(Object result) {
+	public void onSuccess(Object result) {
 		System.out.println("callback:" + result);
 	}
 
 	@Override
-	public void serviceException(Exception e) {
-		e.printStackTrace();
-	}
+	public void onFailure(Throwable exception) {
 
-	@Override
-	public void frameworkException(DPSFException e) {
-		e.printStackTrace();
 	}
 
 }
