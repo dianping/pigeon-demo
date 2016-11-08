@@ -4,11 +4,9 @@
  */
 package com.dianping.pigeon.demo.thrift;
 
-import java.util.HashMap;
 import java.util.concurrent.Future;
 
 import com.dianping.pigeon.container.SpringContainer;
-import com.dianping.pigeon.demo.EchoService;
 import com.dianping.pigeon.remoting.invoker.util.InvokerHelper;
 
 public class Client {
@@ -29,9 +27,9 @@ public class Client {
 
 		//while (true) {
 			try {
-				System.out.println(echoService.echo("scott"));
-				echoServiceWithCallback.echo("scott callback");
-				echoServiceWithFuture.echo("scott future");
+				System.out.println(echoService.echo("scott thrift"));
+				echoServiceWithCallback.echo("scott thrift callback");
+				echoServiceWithFuture.echo("scott thrift future");
 				Future<String> future = InvokerHelper.getFuture(String.class);
 				System.out.println(future.get());
 			} catch (Exception e) {

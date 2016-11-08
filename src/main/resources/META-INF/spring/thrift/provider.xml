@@ -17,11 +17,11 @@
 		<property name="services">
 			<map>
 				<entry
-					key="com.dianping.pigeon.demo.EchoService"
+					key="com.dianping.pigeon.demo.thrift.EchoService"
 					value-ref="defaultEchoServiceImpl" />
 			</map>
 		</property>
 	</bean>
 
-	<bean id="defaultEchoServiceImpl" class="com.dianping.pigeon.demo.EchoServiceDefaultImpl" />
+	<bean id="defaultEchoServiceImpl" class="com.dianping.pigeon.demo.thrift.EchoServiceDefaultImpl" />
 </beans>
