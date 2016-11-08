@@ -19,13 +19,14 @@ public class EchoServiceDefaultImpl implements EchoService, InitializingBean {
 
 	@Override
 	public String echo(String input) {
+		System.out.println(input);
 		return "echo:" + input;
 	}
 
 	@Override
 	public String echo2(Map<User, Double> users, int size) throws IOException {
-		throw new IOException("error raised:" + users);
-		// return "echo2:" + users + ",size:" + size;
+		// throw new IOException("error raised:" + users);
+		return "echo2:" + users + ",size:" + size;
 	}
 
 	@Override

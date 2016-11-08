@@ -11,7 +11,7 @@
 	</appender>
 
 	<appender name="FILE" class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="/data/applogs/dpsflog/pigeon-access.log" />
+		<param name="File" value="/data/applogs/pigeon/pigeon-access.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="5" />
 		<param name="Append" value="true" />

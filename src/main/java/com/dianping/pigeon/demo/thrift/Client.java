@@ -2,7 +2,7 @@
  * Dianping.com Inc.
  * Copyright (c) 2003-2013 All Rights Reserved.
  */
-package com.dianping.pigeon.demo.typical;
+package com.dianping.pigeon.demo.thrift;
 
 import java.util.HashMap;
 import java.util.concurrent.Future;
@@ -14,7 +14,7 @@ import com.dianping.pigeon.remoting.invoker.util.InvokerHelper;
 public class Client {
 
 	private static SpringContainer CLIENT_CONTAINER = new SpringContainer(
-			"classpath*:META-INF/spring/typical/invoker.xml");
+			"classpath*:META-INF/spring/thrift/invoker.xml");
 
 	/**
 	 * @param args
@@ -30,7 +30,6 @@ public class Client {
 		//while (true) {
 			try {
 				System.out.println(echoService.echo("scott"));
-				System.out.println(echoService.echo2(new HashMap(), 3));
 				echoServiceWithCallback.echo("scott callback");
 				echoServiceWithFuture.echo("scott future");
 				Future<String> future = InvokerHelper.getFuture(String.class);

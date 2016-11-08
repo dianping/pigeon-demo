@@ -6,7 +6,6 @@ package com.dianping.pigeon.demo.interceptor;
 
 import com.dianping.pigeon.container.SpringContainer;
 import com.dianping.pigeon.demo.EchoService;
-import com.dianping.pigeon.remoting.invoker.process.InvokerProcessInterceptorFactory;
 
 public class Client {
 
@@ -19,7 +18,6 @@ public class Client {
 	 */
 	public static void main(String[] args) throws Exception {
 		CLIENT_CONTAINER.start();
-		InvokerProcessInterceptorFactory.registerInterceptor(new MyInvokerProcessInterceptor());
 
 		EchoService echoService = (EchoService) CLIENT_CONTAINER.getBean("echoService");
 		System.out.println(echoService.echo("echoService_input"));

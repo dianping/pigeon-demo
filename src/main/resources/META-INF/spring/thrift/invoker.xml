@@ -10,7 +10,7 @@
 	<bean id="echoService" class="com.dianping.pigeon.remoting.invoker.config.spring.ReferenceBean"
 		init-method="init">
 		<property name="interfaceName" value="com.dianping.pigeon.demo.EchoService" />
-		<property name="serialize" value="hessian" />
+		<property name="serialize" value="thrift" />
 		<property name="callType" value="sync" />
 		<property name="timeout" value="1000" />
 	</bean>
@@ -18,7 +18,7 @@
 	<bean id="echoServiceWithFuture" class="com.dianping.pigeon.remoting.invoker.config.spring.ReferenceBean"
 		init-method="init">
 		<property name="interfaceName" value="com.dianping.pigeon.demo.EchoService" />
-		<property name="serialize" value="hessian" />
+		<property name="serialize" value="thrift" />
 		<property name="callType" value="future" />
 		<property name="timeout" value="1000" />
 	</bean>
@@ -26,7 +26,7 @@
 	<bean id="echoServiceWithCallback" class="com.dianping.pigeon.remoting.invoker.config.spring.ReferenceBean"
 		init-method="init">
 		<property name="interfaceName" value="com.dianping.pigeon.demo.EchoService" />
-		<property name="serialize" value="hessian" />
+		<property name="serialize" value="thrift" />
 		<property name="callType" value="sync" />
 		<property name="timeout" value="1000" />
 		<property name="callback" ref="echoServiceCallback" />
@@ -34,12 +34,4 @@
 
 	<bean id="echoServiceCallback" class="com.dianping.pigeon.demo.EchoServiceCallback" />
 
-	<bean id="userService" class="com.dianping.pigeon.remoting.invoker.config.spring.ReferenceBean"
-		init-method="init">
-		<property name="url" value="com.dianping.pigeon.demo.UserService" />
-		<property name="interfaceName" value="com.dianping.pigeon.demo.UserService" />
-		<property name="serialize" value="hessian" />
-		<property name="callType" value="sync" />
-		<property name="timeout" value="1000" />
-	</bean>
 </beans>

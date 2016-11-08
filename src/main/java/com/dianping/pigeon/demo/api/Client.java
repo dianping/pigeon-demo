@@ -5,16 +5,12 @@
 package com.dianping.pigeon.demo.api;
 
 import com.dianping.pigeon.demo.EchoService;
-import com.dianping.pigeon.demo.interceptor.MyInvokerProcessInterceptor;
 import com.dianping.pigeon.remoting.ServiceFactory;
-import com.dianping.pigeon.remoting.invoker.process.InvokerProcessInterceptorFactory;
 
 public class Client {
 
 	public static void main(String[] args) throws Exception {
-		InvokerProcessInterceptorFactory.registerInterceptor(new MyInvokerProcessInterceptor());
-
-		String url = "http://service.dianping.com/com.dianping.pigeon.demo.EchoService";
+		String url = "com.dianping.pigeon.demo.EchoService";
 		EchoService echoService = ServiceFactory.getService(url, EchoService.class);
 
 		//InvocationCallback callback = new EchoServiceCallback();
