@@ -15,7 +15,7 @@ public class Client {
 
 		//InvocationCallback callback = new EchoServiceCallback();
 //		EchoService serviceWithCallback = ServiceFactory.getService(url, EchoService.class, callback);
-//		System.out.println("echoService result:" + echoService.echo("echoService_input"));
+		System.out.println("echoService result:" + echoService.echo("echoService_input"));
 //		serviceWithCallback.echo("echoServiceWithCallback_input");
 	}
 

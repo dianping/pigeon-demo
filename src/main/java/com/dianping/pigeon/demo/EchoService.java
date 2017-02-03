@@ -4,14 +4,12 @@
  */
 package com.dianping.pigeon.demo;
 
-import java.io.IOException;
-import java.util.Map;
-
-import com.dianping.pigeon.demo.UserService.User;
-
 public interface EchoService {
 
 	String echo(String input);
+	
+	User getUser(String username);
 
-	String echo2(Map<User, Double> users, int size) throws IOException;
+	public String echoWithSleep(String input);
+
 }

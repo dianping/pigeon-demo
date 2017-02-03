@@ -8,10 +8,6 @@
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
 	default-autowire="byName">
 
-	<bean id="placeholder" class="com.dianping.lion.client.SpringConfig">
-		<property name="propertiesPath" value="config/applicationContext.properties" />
-	</bean>
-
 	<bean class="com.dianping.pigeon.remoting.provider.config.spring.ServiceBean"
 		init-method="init">
 		<property name="services">
@@ -22,18 +18,6 @@
 			</map>
 		</property>
 	</bean>
-
-	<bean class="com.dianping.pigeon.remoting.provider.config.spring.ServiceBean"
-		init-method="init">
-		<property name="services">
-			<map>
-				<entry key="com.dianping.pigeon.demo.UserService" value-ref="defaultUserServiceImpl" />
-			</map>
-		</property>
-		
-	</bean>
-
-	<bean id="defaultUserServiceImpl" class="com.dianping.pigeon.demo.UserServiceDefaultImpl" />
 
 	<bean id="defaultEchoServiceImpl" class="com.dianping.pigeon.demo.EchoServiceDefaultImpl" />
 </beans>

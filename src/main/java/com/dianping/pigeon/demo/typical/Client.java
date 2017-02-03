@@ -4,7 +4,8 @@
  */
 package com.dianping.pigeon.demo.typical;
 
-import java.util.HashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import com.dianping.pigeon.container.SpringContainer;
@@ -15,6 +16,7 @@ public class Client {
 
 	private static SpringContainer CLIENT_CONTAINER = new SpringContainer(
 			"classpath*:META-INF/spring/typical/invoker.xml");
+	private static ExecutorService pool = Executors.newFixedThreadPool(50);
 
 	/**
 	 * @param args
@@ -23,22 +25,30 @@ public class Client {
 	public static void main(String[] args) throws Exception {
 		CLIENT_CONTAINER.start();
 
-		EchoService echoService = (EchoService) CLIENT_CONTAINER.getBean("echoService");
-		EchoService echoServiceWithCallback = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithCallback");
-		EchoService echoServiceWithFuture = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithFuture");
+		final EchoService echoService = (EchoService) CLIENT_CONTAINER.getBean("echoService");
+		final EchoService echoServiceWithCallback = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithCallback");
+		final EchoService echoServiceWithFuture = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithFuture");
 
-		//while (true) {
-			try {
-				System.out.println(echoService.echo("scott"));
-				System.out.println(echoService.echo2(new HashMap(), 3));
-				echoServiceWithCallback.echo("scott callback");
-				echoServiceWithFuture.echo("scott future");
-				Future<String> future = InvokerHelper.getFuture(String.class);
-				System.out.println(future.get());
-			} catch (Exception e) {
+//		pool.execute(new Runnable(){
+//
+//			@Override
+//			public void run() {
+				while (true) {
+					try {
+						System.out.println(echoService.getUser("scott"));
+						System.out.println(echoService.echo("scott"));
+						echoServiceWithCallback.echo("scott callback");
+						echoServiceWithFuture.echo("scott future");
+						Future<String> future = InvokerHelper.getFuture(String.class);
+						System.out.println(future.get());
+					} catch (Exception e) {
 
-			}
-		//}
+					}
+				}				
+		//	}
+			
+	//	});
+		
 
 	}
 

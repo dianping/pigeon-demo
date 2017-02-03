@@ -4,13 +4,10 @@
  */
 package com.dianping.pigeon.demo;
 
-import java.io.IOException;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.dianping.pigeon.demo.UserService.User;
+import com.dianping.lion.client.Lion;
 
 public class EchoServiceDefaultImpl implements EchoService {
 
@@ -23,9 +20,17 @@ public class EchoServiceDefaultImpl implements EchoService {
 	}
 
 	@Override
-	public String echo2(Map<User, Double> users, int size) throws IOException {
-		// throw new IOException("error raised:" + users);
-		return "echo2:" + users + ",size:" + size;
+	public String echoWithSleep(String input) {
+		try {
+			Thread.sleep(Lion.getIntValue("pigeon-test.echo.sleep"));
+		} catch (InterruptedException e) {
+		}
+		return "echo:" + input;
+	}
+
+	@Override
+	public User getUser(String username) {
+		return new UserImpl(username);
 	}
 
 }

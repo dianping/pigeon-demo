@@ -8,16 +8,11 @@
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
 	default-autowire="byName">
 
-	<bean class="com.dianping.dpsf.spring.ServiceRegistry"
+	<bean class="com.dianping.pigeon.remoting.provider.config.spring.ServiceBean"
 		init-method="init">
-		<property name="port">
-			<value>4040</value>
-		</property>
 		<property name="services">
 			<map>
-				<entry
-					key="http://service.dianping.com/com.dianping.pigeon.demo.EchoService"
-					value-ref="defaultEchoServiceImpl" />
+				<entry key="com.dianping.pigeon.demo.EchoService" value-ref="defaultEchoServiceImpl" />
 			</map>
 		</property>
 	</bean>

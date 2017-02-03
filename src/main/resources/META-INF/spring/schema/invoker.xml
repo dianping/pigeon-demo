@@ -9,7 +9,7 @@
                 http://code.dianping.com/schema/pigeon http://code.dianping.com/schema/pigeon/pigeon-service-2.0.xsd">
 
 	<pigeon:reference id="echoService" timeout="1000"
-		url="http://service.dianping.com/com.dianping.pigeon.demo.EchoService"
+		url="com.dianping.pigeon.demo.EchoService"
 		interface="com.dianping.pigeon.demo.EchoService">
 		<pigeon:method name="echo" timeout="2000" />
 	</pigeon:reference>
@@ -18,7 +18,7 @@
 
 	<pigeon:reference id="echoServiceWithCallback"
 		interface="com.dianping.pigeon.demo.EchoService"
-		url="http://service.dianping.com/com.dianping.pigeon.demo.EchoService"
+		url="com.dianping.pigeon.demo.EchoService"
 		timeout="1000" protocol="default" serialize="hessian" callType="callback"
 		callback="echoServiceCallback" />
 

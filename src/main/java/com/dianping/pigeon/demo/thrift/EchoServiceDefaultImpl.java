@@ -4,13 +4,8 @@
  */
 package com.dianping.pigeon.demo.thrift;
 
-import java.io.IOException;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.dianping.pigeon.demo.UserService.User;
 
 public class EchoServiceDefaultImpl implements EchoService {
 
@@ -20,12 +15,6 @@ public class EchoServiceDefaultImpl implements EchoService {
 	public String echo(String input) {
 		System.out.println(input);
 		return "echo:" + input;
-	}
-
-	@Override
-	public String echo2(Map<User, Double> users, int size) throws IOException {
-		// throw new IOException("error raised:" + users);
-		return "echo2:" + users + ",size:" + size;
 	}
 
 }

@@ -24,6 +24,8 @@ public class Client {
 
 		System.out.println(echoService.echo("echoService_input"));
 		echoServiceWithCallback.echo("echoServiceWithCallback_input");
+
+		System.out.println(echoService.getUser("scott"));
 	}
 
 }

@@ -25,7 +25,7 @@ public class Client {
 		EchoService echoServiceWithCallback = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithCallback");
 		EchoService echoServiceWithFuture = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithFuture");
 
-		//while (true) {
+		while (true) {
 			try {
 				System.out.println(echoService.echo("scott thrift"));
 				echoServiceWithCallback.echo("scott thrift callback");
@@ -35,7 +35,7 @@ public class Client {
 			} catch (Exception e) {
 
 			}
-		//}
+		}
 
 	}
 

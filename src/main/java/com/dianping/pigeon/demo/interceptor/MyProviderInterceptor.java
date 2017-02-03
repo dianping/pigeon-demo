@@ -7,7 +7,7 @@ public class MyProviderInterceptor implements ProviderInterceptor {
 
 	@Override
 	public void preInvoke(ProviderContext providerContext) {
-		System.out.println("preInvoke:" + providerContext);
+		//System.out.println("preInvoke:" + providerContext);
 	}
 
 	@Override

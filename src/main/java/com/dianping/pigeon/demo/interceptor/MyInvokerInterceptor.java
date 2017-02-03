@@ -8,7 +8,7 @@ public class MyInvokerInterceptor implements InvokerInterceptor {
 
 	@Override
 	public void preInvoke(InvokerContext invokerContext) {
-		System.out.println("preInvoke:" + invokerContext.getRequest());		
+		//System.out.println("preInvoke:" + invokerContext.getRequest());		
 	}
 
 	@Override

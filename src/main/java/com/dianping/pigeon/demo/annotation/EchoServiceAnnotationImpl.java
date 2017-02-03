@@ -4,10 +4,10 @@
  */
 package com.dianping.pigeon.demo.annotation;
 
-import java.util.Map;
-
+import com.dianping.lion.client.Lion;
 import com.dianping.pigeon.demo.EchoService;
-import com.dianping.pigeon.demo.UserService.User;
+import com.dianping.pigeon.demo.User;
+import com.dianping.pigeon.demo.UserImpl;
 import com.dianping.pigeon.remoting.provider.config.annotation.Service;
 
 @Service
@@ -20,8 +20,16 @@ public class EchoServiceAnnotationImpl implements EchoService {
 	}
 
 	@Override
-	public String echo2(Map<User, Double> users, int size) {
-		System.out.println("received: " + users);
-		return "annotation service echo2:" + users;
+	public String echoWithSleep(String input) {
+		try {
+			Thread.sleep(Lion.getIntValue("pigeon-test.echo.sleep"));
+		} catch (InterruptedException e) {
+		}
+		return "echo:" + input;
+	}
+
+	@Override
+	public User getUser(String username) {
+		return new UserImpl(username);
 	}
 }
