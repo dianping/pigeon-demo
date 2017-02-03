@@ -29,26 +29,24 @@ public class Client {
 		final EchoService echoServiceWithCallback = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithCallback");
 		final EchoService echoServiceWithFuture = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithFuture");
 
-//		pool.execute(new Runnable(){
-//
-//			@Override
-//			public void run() {
-				while (true) {
-					try {
-						System.out.println(echoService.getUser("scott"));
-						System.out.println(echoService.echo("scott"));
-						echoServiceWithCallback.echo("scott callback");
-						echoServiceWithFuture.echo("scott future");
-						Future<String> future = InvokerHelper.getFuture(String.class);
-						System.out.println(future.get());
-					} catch (Exception e) {
+		// pool.execute(new Runnable(){
+		//
+		// @Override
+		// public void run() {
+		// while (true) {
+		// try {
+		System.out.println(echoService.getUser("scott"));
+		System.out.println(echoService.echo("scott"));
+		echoServiceWithCallback.echo("scott callback");
+		echoServiceWithFuture.echo("scott future");
+		Future<String> future = InvokerHelper.getFuture(String.class);
+		System.out.println(future.get());
+		// } catch (Exception e) {
+		// }
+		// }
+		// }
 
-					}
-				}				
-		//	}
-			
-	//	});
-		
+		// });
 
 	}
 

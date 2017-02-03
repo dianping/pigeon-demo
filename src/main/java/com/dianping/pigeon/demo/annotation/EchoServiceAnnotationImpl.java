@@ -4,7 +4,6 @@
  */
 package com.dianping.pigeon.demo.annotation;
 
-import com.dianping.lion.client.Lion;
 import com.dianping.pigeon.demo.EchoService;
 import com.dianping.pigeon.demo.User;
 import com.dianping.pigeon.demo.UserImpl;
@@ -17,15 +16,6 @@ public class EchoServiceAnnotationImpl implements EchoService {
 	public String echo(String input) {
 		System.out.println("received: " + input);
 		return "annotation service echo:" + input;
-	}
-
-	@Override
-	public String echoWithSleep(String input) {
-		try {
-			Thread.sleep(Lion.getIntValue("pigeon-test.echo.sleep"));
-		} catch (InterruptedException e) {
-		}
-		return "echo:" + input;
 	}
 
 	@Override

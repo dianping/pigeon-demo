@@ -25,18 +25,11 @@ public class Client {
 		EchoService echoServiceWithCallback = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithCallback");
 		EchoService echoServiceWithFuture = (EchoService) CLIENT_CONTAINER.getBean("echoServiceWithFuture");
 
-		while (true) {
-			try {
-				System.out.println(echoService.echo("scott thrift"));
-				echoServiceWithCallback.echo("scott thrift callback");
-				echoServiceWithFuture.echo("scott thrift future");
-				Future<String> future = InvokerHelper.getFuture(String.class);
-				System.out.println(future.get());
-			} catch (Exception e) {
-
-			}
-		}
-
+		System.out.println(echoService.echo("scott thrift"));
+		echoServiceWithCallback.echo("scott thrift callback");
+		echoServiceWithFuture.echo("scott thrift future");
+		Future<String> future = InvokerHelper.getFuture(String.class);
+		System.out.println(future.get());
 	}
 
 }

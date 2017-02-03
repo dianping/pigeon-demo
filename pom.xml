@@ -15,29 +15,14 @@
 			<version>3.2.9.RELEASE</version>
 		</dependency>
 		<dependency>
-			<groupId>com.dianping.dpsf</groupId>
-			<artifactId>dpsf-net</artifactId>
+			<groupId>com.dianping</groupId>
+			<artifactId>pigeon</artifactId>
 			<version>2.9.8-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.dianping.cat</groupId>
-			<artifactId>cat-client</artifactId>
-			<version>1.5.4-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.dianping.lion</groupId>
-			<artifactId>lion-client</artifactId>
-			<version>0.6.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mortbay.jetty</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5-20081211</version>
-		</dependency>
-		<dependency>
-			<groupId>com.dianping</groupId>
-			<artifactId>avatar-tracker</artifactId>
-			<version>2.1.9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.facebook.swift</groupId>

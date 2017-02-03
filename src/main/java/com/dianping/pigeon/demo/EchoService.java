@@ -10,6 +10,4 @@ public interface EchoService {
 	
 	User getUser(String username);
 
-	public String echoWithSleep(String input);
-
 }
