@@ -27,12 +27,12 @@
 		<dependency>
 			<groupId>com.facebook.swift</groupId>
 			<artifactId>swift-annotations</artifactId>
-			<version>0.16.0-mt-SNAPSHOT</version>
+			<version>0.17.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.facebook.swift</groupId>
 			<artifactId>swift-codec</artifactId>
-			<version>0.16.0-mt-SNAPSHOT</version>
+			<version>0.17.0</version>
 		</dependency>
 	</dependencies>
 	<build>
